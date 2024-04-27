@@ -18,12 +18,10 @@ volumes:
 up:
 	@docker compose -f ./srcs/docker-compose.yml up -d --build
 
-stop:
-	@docker compose -f ./srcs/docker-compose.yml stop
+down:
+	@docker compose -f ./srcs/docker-compose.yml down --volumes
 
-clean:
-	@docker volume rm srcs_mariadb
-	@docker volume rm srcs_wordpress
+clean: down
 	@sudo rm -rf /home/lbiasuz/data/mysql
 	@sudo rm -rf /home/lbiasuz/data/html
 
