@@ -22,8 +22,8 @@ down:
 	@docker compose -f ./srcs/docker-compose.yml down --volumes
 
 clean: down
-	@sudo rm -rf /home/lbiasuz/data/mysql
-	@sudo rm -rf /home/lbiasuz/data/html
+	@sudo rm -rf /home/lbiasuz/data/mysql/*
+	@sudo rm -rf /home/lbiasuz/data/html/*
 
 fclean: clean
 	docker system prune -af
